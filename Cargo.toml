@@ -18,7 +18,7 @@ all-features = true
 
 [features]
 default = ["connect", "handshake"]
-connect = ["stream", "tokio/net", "handshake"]
+connect = ["stream", "tokio/net", "tokio/time", "handshake"]
 handshake = ["tungstenite/handshake"]
 proxy = ["tungstenite/proxy", "tokio/net", "handshake"]
 native-tls = ["native-tls-crate", "tokio-native-tls", "stream", "tungstenite/native-tls", "handshake"]
@@ -75,7 +75,7 @@ futures-channel = "0.3.28"
 hyper = { version = "1.0", default-features = false, features = ["http1", "server"] }
 hyper-util = { version = "0.1", features = ["tokio"] }
 http-body-util = "0.1"
-tokio = { version = "1.27.0", default-features = false, features = ["io-std", "io-util", "macros", "net", "rt-multi-thread", "time"] }
+tokio = { version = "1.27.0", default-features = false, features = ["io-std", "io-util", "macros", "net", "rt-multi-thread", "test-util", "time"] }
 env_logger = "0.10.0"
 
 [[example]]
